@@ -1,7 +1,7 @@
-function Checkbox() {
+function Checkbox({ text }) {
   return (
     <label>
-      <input type="checkbox" /> <span>I agree to the Terms and Conditions</span>
+      <input type="checkbox" /> <span>{text}</span>
     </label>
   );
 }

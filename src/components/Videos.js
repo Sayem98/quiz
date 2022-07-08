@@ -2,7 +2,7 @@ import classes from "../styles/Videos.module.css";
 import Video from "./Video";
 function Videos() {
   return (
-    <div class={classes.videos}>
+    <div className={classes.videos}>
       <Video />
       <Video />
       <Video />

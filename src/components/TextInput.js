@@ -3,9 +3,9 @@ import classes from "../styles/TextInput.module.css";
 function TextInput({ icon, type, placeholder, ...rest }) {
   return (
     <>
-      <div class={classes.textInput}>
+      <div className={classes.textInput}>
         <input type={type} placeholder={placeholder} {...rest} />
-        <span class="material-icons-outlined"> {icon} </span>
+        <span className="material-icons-outlined"> {icon} </span>
       </div>
     </>
   );

@@ -20,7 +20,7 @@ function Login() {
           <Button>
             <span>Log in</span>
           </Button>
-          <div class="info">
+          <div className="info">
             Don't have an account? <Link to="/signup">Signup</Link> instead.
           </div>
         </Form>
