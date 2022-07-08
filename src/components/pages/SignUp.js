@@ -24,28 +24,37 @@ function SignUp() {
     //Does't work preventDefault()
     //event.preventDefault();
     //console.log(event);
-    console.log(username);
-    console.log(password);
+    //console.log(username);
+    //console.log(password);
+    // console.log(password);
+    // console.log(confirm_password);
     if (password !== confirm_password) {
       setError("Password does not match!");
-    }
+    } else {
+      try {
+        setError("");
+        setLoading(true);
+        await signup(email, password, username);
+        // history.push("/");
+        history("/");
+      } catch (err) {
+        //console.log(err);
+        switch (err.code) {
+          case "auth/email-already-in-use":
+            setError("Email already in use!");
+            break;
 
-    try {
-      setError("");
-      setLoading(true);
-      await signup(email, password, username);
-      // history.push("/");
-      history("/");
-    } catch (err) {
-      console.log(err);
-      setLoading(false);
-      setError("Can not create account!");
+          default:
+            setError("Can not create account!");
+        }
+      }
     }
   }
 
   const handlesubmit = (e) => {
     e.preventDefault();
     handleSubmit();
+    setLoading(false);
   };
 
   return (
