@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import classes from "../../styles/Login.module.css";
 import Button from "../Button";
 import { useAuth } from "../contexts/AuthContext";
@@ -26,7 +26,8 @@ function Login() {
 
     setLoading(false);
   }
-  return (
+  const { currentUser } = useAuth();
+  return !currentUser ? (
     <>
       <h1>Login to your account</h1>
       <div className="column">
@@ -61,6 +62,8 @@ function Login() {
         </Form>
       </div>
     </>
+  ) : (
+    <Navigate to="/" />
   );
 }
 
