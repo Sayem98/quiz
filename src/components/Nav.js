@@ -9,7 +9,7 @@ function Nav() {
       <nav className={classes.nav}>
         <ul>
           <li>
-            <Link to="/quiz" className={classes.brand}>
+            <Link to="/" className={classes.brand}>
               <img src={logo} alt="Learn with Sumit Logo" />
               <h3>Learn with Sumit</h3>
             </Link>

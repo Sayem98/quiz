@@ -7,7 +7,7 @@ import Form from "../Form";
 import Illustration from "../Illustration";
 import TextInput from "../TextInput";
 
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 function SignUp() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -56,8 +56,10 @@ function SignUp() {
     handleSubmit();
     setLoading(false);
   };
-
-  return (
+  const { currentUser } = useAuth();
+  console.log(currentUser);
+  //Loads two times. why? -----------------------------Problem?
+  return !currentUser ? (
     <>
       <h1>Create an account</h1>
       <div className="column">
@@ -108,6 +110,8 @@ function SignUp() {
         </Form>
       </div>
     </>
+  ) : (
+    <Navigate to="/" />
   );
 }
 

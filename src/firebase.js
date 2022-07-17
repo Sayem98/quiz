@@ -3,6 +3,8 @@ import { initializeApp } from "firebase/app";
 const app = initializeApp({
   apiKey: "AIzaSyBx4pMSiKflxWTY5j6rOjWtGZY-KlXXa_Y",
   authDomain: "quiz-dev-b7f2b.firebaseapp.com",
+  databaseURL:
+    "https://quiz-dev-b7f2b-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "quiz-dev-b7f2b",
   storageBucket: "quiz-dev-b7f2b.appspot.com",
   messagingSenderId: "104859974249",

@@ -7,7 +7,7 @@ import Questions from "../Questions";
 
 function Quiz() {
   const { currentUser } = useAuth();
-  // console.log(currentUser);
+  console.log(currentUser);
   return currentUser ? (
     <>
       <Questions question="Your favourite star wars movies" />
