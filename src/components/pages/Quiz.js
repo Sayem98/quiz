@@ -1,4 +1,4 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import Answers from "../Answers";
 import { useAuth } from "../contexts/AuthContext";
 import MiniPlayer from "../MiniPlayer";
@@ -7,7 +7,9 @@ import Questions from "../Questions";
 
 function Quiz() {
   const { currentUser } = useAuth();
-  console.log(currentUser);
+  // console.log(currentUser);
+  const { id } = useParams();
+  
   return currentUser ? (
     <>
       <Questions question="Your favourite star wars movies" />
